@@ -10,4 +10,7 @@ RUN curl https://fai.cs.uni-saarland.de/hoffmann/ff/FF-v2.3.tgz | tar -xvz
 WORKDIR /ff/FF-v2.3
 RUN make
 
-ENTRYPOINT ["./ff"]
+RUN mkdir -p /pddl
+WORKDIR /pddl
+
+ENTRYPOINT ["/ff/FF-v2.3/ff"]
